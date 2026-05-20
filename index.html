@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Правила здорового харчування</title>
+  <style>
+    :root {
+      --ink: #102334;
+      --muted: #4c5c66;
+      --paper: #f7f8f5;
+      --cream: #eef3ef;
+      --leaf: #17624f;
+      --mint: #dce8e1;
+      --tomato: #205f7c;
+      --berry: #1f4c69;
+      --grain: #6c7f3d;
+      --water: #0d6f88;
+      --line: rgba(16, 35, 52, 0.18);
+      --shadow: 0 14px 34px rgba(16, 35, 52, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      line-height: 1.62;
+    }
+
+    a {
+      color: #0d5d76;
+      font-weight: 600;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: grid;
+      align-items: center;
+      padding: 42px clamp(18px, 5vw, 72px) 64px;
+      background:
+        linear-gradient(100deg, rgba(6, 27, 43, 0.92), rgba(13, 61, 76, 0.52)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'%3E%3Crect width='1600' height='1000' fill='%23e9eeea'/%3E%3Cg opacity='.82'%3E%3Cpath d='M0 195h1600M0 390h1600M0 585h1600M0 780h1600' stroke='%239baaa8' stroke-width='2'/%3E%3Cpath d='M258 0v1000M516 0v1000M774 0v1000M1032 0v1000M1290 0v1000' stroke='%23aab5b2' stroke-width='1.5'/%3E%3C/g%3E%3Ccircle cx='1230' cy='520' r='350' fill='%238fa0a0'/%3E%3Ccircle cx='1215' cy='520' r='284' fill='%23f4f6f2'/%3E%3Cpath d='M1018 520a197 197 0 0 1 197-197v197z' fill='%2317624f'/%3E%3Cpath d='M1215 323a197 197 0 0 1 197 197h-197z' fill='%23205f7c'/%3E%3Cpath d='M1412 520a197 197 0 0 1-197 197V520z' fill='%236c7f3d'/%3E%3Cpath d='M1215 717a197 197 0 0 1-197-197h197z' fill='%231f4c69'/%3E%3Cpath d='M180 188c85-44 178-38 246 14-60 69-154 88-246-14z' fill='%2317624f'/%3E%3Cpath d='M592 176c84 50 120 136 96 223-88-16-149-89-96-223z' fill='%230d6f88'/%3E%3Cellipse cx='344' cy='535' rx='154' ry='100' fill='%23205f7c'/%3E%3Cellipse cx='655' cy='650' rx='170' ry='80' fill='%236c7f3d'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      color: #f7f8f5;
+    }
+
+    .hero__content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: #c9d7d2;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin: 0;
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 24px 0 0;
+      font-size: clamp(1.08rem, 2vw, 1.38rem);
+      border-top: 1px solid rgba(247, 248, 245, 0.42);
+      padding-top: 22px;
+    }
+
+    .hero__stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .stat {
+      min-width: 154px;
+      padding: 14px 16px;
+      border: 1px solid rgba(247, 248, 245, 0.48);
+      border-radius: 2px;
+      background: rgba(6, 27, 43, 0.36);
+      backdrop-filter: blur(8px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.48rem;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      padding: 70px clamp(18px, 5vw, 72px);
+    }
+
+    .inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .plate-section {
+      background: #f7f8f5;
+    }
+
+    .plate-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.88fr) minmax(300px, 1.12fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .plate-card {
+      padding: clamp(16px, 3vw, 28px);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .plate-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .legend {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .legend li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legend li:last-child {
+      border-bottom: 0;
+    }
+
+    .dot {
+      width: 18px;
+      height: 18px;
+      margin-top: 4px;
+      border-radius: 50%;
+      background: var(--leaf);
+    }
+
+    .dot--tomato { background: var(--tomato); }
+    .dot--grain { background: var(--grain); }
+    .dot--berry { background: var(--berry); }
+    .dot--water { background: var(--water); }
+
+    .tips {
+      background: var(--cream);
+    }
+
+    .tip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .tip {
+      min-height: 242px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: #ffffff;
+    }
+
+    .tip svg {
+      width: 54px;
+      height: 54px;
+      margin-bottom: 16px;
+    }
+
+    .tip h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      line-height: 1.2;
+    }
+
+    .tip p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .habits {
+      background: #e8efec;
+    }
+
+    .habit-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: habits;
+    }
+
+    .habit-list li {
+      counter-increment: habits;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: #fff;
+    }
+
+    .habit-list li::before {
+      content: counter(habits);
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--ink);
+      font-weight: 900;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .habit-list strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .meal-plan {
+      background: #f7f8f5;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .meal {
+      position: relative;
+      min-height: 210px;
+      padding: 20px;
+      border-radius: 2px;
+      color: #f7f8f5;
+      overflow: hidden;
+    }
+
+    .meal::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      bottom: -42px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .meal h3,
+    .meal p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .meal h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .meal p {
+      margin: 0;
+    }
+
+    .meal--one { background: #17624f; }
+    .meal--two { background: #1f4c69; }
+    .meal--three { background: #0d6f88; }
+    .meal--four { background: #475d3f; }
+
+    .sources {
+      background: #102334;
+      color: #f7f8f5;
+    }
+
+    .sources .lead {
+      color: #d6dfdd;
+    }
+
+    .sources ul {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0 0;
+      padding-left: 20px;
+    }
+
+    .sources a {
+      color: #a8d8e8;
+    }
+
+    footer {
+      padding: 26px clamp(18px, 5vw, 72px);
+      color: var(--muted);
+      background: #f7f8f5;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .plate-layout,
+      .tip-grid,
+      .habit-list,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 78vh;
+        background-position: 62% center;
+      }
+
+      .tip,
+      .meal {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      section {
+        padding-block: 52px;
+      }
+
+      h1 {
+        max-width: 9ch;
+      }
+
+      .hero__stats {
+        display: grid;
+      }
+
+      .stat {
+        min-width: 0;
+      }
+
+      .habit-list li {
+        grid-template-columns: 40px 1fr;
+      }
+
+      .habit-list li::before {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Пам'ятка для щоденного вибору</p>
+      <h1>Здорове харчування</h1>
+      <p>Збалансований раціон не про суворі заборони, а про регулярні рішення: більше простих продуктів, різноманіття на тарілці, достатньо води та помірність із сіллю, цукром і насиченими жирами.</p>
+      <div class="hero__stats" aria-label="Ключові орієнтири здорового харчування">
+        <div class="stat"><strong>1/2</strong>тарілки — овочі та фрукти</div>
+        <div class="stat"><strong>400 г</strong>рослинної їжі щодня</div>
+        <div class="stat"><strong>&lt; 5 г</strong>солі на день</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="plate-section">
+      <div class="inner plate-layout">
+        <div class="plate-card" aria-label="Інфографіка збалансованої тарілки">
+          <svg class="plate-svg" viewBox="0 0 600 600" role="img" aria-labelledby="plate-title plate-desc">
+            <title id="plate-title">Збалансована тарілка</title>
+            <desc id="plate-desc">Половина тарілки складається з овочів і фруктів, друга половина поділена між цільними злаками та білковими продуктами.</desc>
+            <circle cx="300" cy="300" r="250" fill="#8fa0a0"></circle>
+            <circle cx="300" cy="300" r="224" fill="#ffffff"></circle>
+            <path d="M300 76A224 224 0 0 0 76 300h224z" fill="#17624f"></path>
+            <path d="M76 300a224 224 0 0 0 224 224V300z" fill="#205f7c"></path>
+            <path d="M300 76a224 224 0 0 1 224 224H300z" fill="#6c7f3d"></path>
+            <path d="M524 300a224 224 0 0 1-224 224V300z" fill="#1f4c69"></path>
+            <circle cx="300" cy="300" r="74" fill="#ffffff" stroke="rgba(16,35,52,.22)" stroke-width="4"></circle>
+            <text x="300" y="292" text-anchor="middle" fill="#1b241f" font-size="24" font-weight="800">Вода</text>
+            <text x="300" y="324" text-anchor="middle" fill="#59635d" font-size="18">поруч</text>
+            <text x="190" y="210" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Овочі</text>
+            <text x="188" y="408" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Фрукти</text>
+            <text x="407" y="210" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Злаки</text>
+            <text x="407" y="408" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Білок</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="section-head">
+            <h2>Як виглядає збалансована тарілка</h2>
+            <p class="lead">Орієнтир простий: половину прийому їжі складають овочі та фрукти, чверть — цільнозернові продукти, чверть — корисні джерела білка. Напої — переважно вода.</p>
+          </div>
+          <ul class="legend">
+            <li><span class="dot"></span><span><strong>Овочі.</strong> Чергуйте зелені листові, бобові, капусту, моркву, буряк, перець і сезонні овочі.</span></li>
+            <li><span class="dot dot--tomato"></span><span><strong>Фрукти.</strong> Обирайте цілі плоди частіше, ніж соки: так більше клітковини й довше відчуття ситості.</span></li>
+            <li><span class="dot dot--grain"></span><span><strong>Цільні злаки.</strong> Вівсянка, гречка, бурий рис, цільнозерновий хліб і макарони підтримують стабільну енергію.</span></li>
+            <li><span class="dot dot--berry"></span><span><strong>Білок.</strong> Риба, яйця, птиця, бобові, горіхи, насіння і кисломолочні продукти допомагають відновленню тканин.</span></li>
+            <li><span class="dot dot--water"></span><span><strong>Вода.</strong> Тримайте воду поруч і зменшуйте солодкі напої, особливо між прийомами їжі.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Шість правил на щодень</h2>
+          <p class="lead">Ці поради легко застосувати вдома, у школі, на роботі чи під час покупок.</p>
+        </div>
+        <div class="tip-grid">
+          <article class="tip">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="25" cy="35" r="16" fill="#17624f"></circle><path d="M35 21c7-8 17-7 22-2-4 8-13 12-22 2z" fill="#6c7f3d"></path><circle cx="39" cy="39" r="14" fill="#205f7c"></circle></svg>
+            <h3>Їжте різні кольори</h3>
+            <p>Щодня додавайте до меню зелені, червоні, помаранчеві й фіолетові продукти: різні кольори означають різні поживні речовини.</p>
+          </article>
+          <article class="tip">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="18" width="44" height="30" rx="2" fill="#6c7f3d"></rect><path d="M16 29h32M18 38h28" stroke="#f7f8f5" stroke-width="4" stroke-linecap="round"></path><path d="M19 16c6-7 20-7 26 0" fill="none" stroke="#475d3f" stroke-width="5" stroke-linecap="round"></path></svg>
+            <h3>Обирайте цільне</h3>
+            <p>Замінюйте частину білого хліба, солодких пластівців і випічки на крупи, висівковий або цільнозерновий хліб.</p>
+          </article>
+          <article class="tip">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M16 12h32l-4 42H20z" fill="#0d6f88"></path><path d="M20 29h24" stroke="#f7f8f5" stroke-width="4"></path><path d="M24 18h16" stroke="#d6dfdd" stroke-width="4" stroke-linecap="round"></path></svg>
+            <h3>Пийте воду</h3>
+            <p>Вода має бути базовим напоєм. Солодкі газовані напої, енергетики та пакетовані соки краще залишати для рідкісних випадків.</p>
+          </article>
+          <article class="tip">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="23" fill="#1f4c69"></circle><path d="M20 35c9-13 16-13 25 0" fill="none" stroke="#f7f8f5" stroke-width="5" stroke-linecap="round"></path><circle cx="24" cy="25" r="3" fill="#f7f8f5"></circle><circle cx="40" cy="25" r="3" fill="#f7f8f5"></circle></svg>
+            <h3>Скорочуйте цукор</h3>
+            <p>Дивіться склад продуктів: доданий цукор часто є у йогуртах, соусах, батончиках і готових сніданках.</p>
+          </article>
+          <article class="tip">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M31 8c11 12 16 23 16 33a15 15 0 0 1-30 0c0-10 5-21 14-33z" fill="#8fa0a0"></path><path d="M31 13c6 9 9 18 9 27a8 8 0 0 1-16 0c0-9 3-18 7-27z" fill="#f7f8f5"></path></svg>
+            <h3>Менше солі</h3>
+            <p>Смак підсилюють не лише сіллю: спробуйте лимонний сік, часник, зелень, паприку, перець і сушені трави.</p>
+          </article>
+          <article class="tip">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="24" cy="32" r="13" fill="#17624f"></circle><circle cx="41" cy="32" r="13" fill="#205f7c"></circle><path d="M17 47h30" stroke="#102334" stroke-width="5" stroke-linecap="round"></path></svg>
+            <h3>Плануйте перекуси</h3>
+            <p>Тримайте під рукою фрукти, горіхи, натуральний йогурт або овочі. Так легше не переходити на випадкові солодощі.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="habits">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Маленькі звички, що працюють</h2>
+          <p class="lead">Не обов'язково змінювати все за один день. Почніть із двох-трьох пунктів і додайте нові, коли вони стануть звичними.</p>
+        </div>
+        <ol class="habit-list">
+          <li><span><strong>Складайте список покупок.</strong> Спершу плануйте овочі, фрукти, білок і крупи, а потім додаткові продукти.</span></li>
+          <li><span><strong>Їжте повільніше.</strong> Організму потрібен час, щоб відчути ситість, тому пауза між порціями справді допомагає.</span></li>
+          <li><span><strong>Готуйте прості заготовки.</strong> Відварена крупа, запечені овочі чи нарізана зелень рятують у зайняті дні.</span></li>
+          <li><span><strong>Читайте етикетки.</strong> Порівнюйте кількість солі, доданого цукру, насичених і трансжирів у схожих продуктах.</span></li>
+          <li><span><strong>Не пропускайте білок.</strong> Додавайте його до основних прийомів їжі, щоб довше залишатися ситими.</span></li>
+          <li><span><strong>Залишайте місце для гнучкості.</strong> Здоровий раціон витримує свята, улюблені страви й різні культурні традиції.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="meal-plan">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Приклад дня</h2>
+          <p class="lead">Це не суворе меню, а зразок того, як поєднати групи продуктів протягом дня.</p>
+        </div>
+        <div class="timeline">
+          <article class="meal meal--one">
+            <h3>Сніданок</h3>
+            <p>Вівсянка з ягодами, горіхами та натуральним йогуртом або яйце з цільнозерновим тостом і овочами.</p>
+          </article>
+          <article class="meal meal--two">
+            <h3>Обід</h3>
+            <p>Гречка чи бурий рис, риба або бобові, велика порція салату з олією, зеленню та лимонним соком.</p>
+          </article>
+          <article class="meal meal--three">
+            <h3>Перекус</h3>
+            <p>Яблуко, морква з хумусом, жменя несолоних горіхів або кисломолочний продукт без доданого цукру.</p>
+          </article>
+          <article class="meal meal--four">
+            <h3>Вечеря</h3>
+            <p>Запечені овочі, курка, тофу чи квасоля, невелика порція цільнозернового гарніру та вода.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Джерела</h2>
+          <p class="lead">Текстові поради адаптовано з міжнародних рекомендацій для загальної аудиторії. За медичних обмежень, алергій або спеціальних потреб варто радитися з лікарем чи дієтологом.</p>
+        </div>
+        <ul>
+          <li><a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet">World Health Organization: Healthy diet</a></li>
+          <li><a href="https://www.myplate.gov/web/eat-healthy/what-is-myplate">USDA MyPlate: What is MyPlate?</a></li>
+          <li><a href="https://www.fda.gov/food/nutrition-facts-label/using-nutrition-facts-label-and-myplate-make-healthier-choices">FDA: Nutrition Facts Label and MyPlate</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Вебсторінка створена як навчальний матеріал про базові правила здорового харчування.
+  </footer>
+</body>
+</html>
